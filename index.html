@@ -8,6 +8,8 @@
     <!-- Bootstrap Ext -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- FontAwesome Ext -->
+    <script src="https://kit.fontawesome.com/41aacaf0b0.js" crossorigin="anonymous"></script>
     <!-- Google Fonts Ext -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,15 +19,77 @@
 </head>
 <body>
     <!-- Header -->
-    <header></header>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">DYSTOPIA</i></a></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                  <a class="nav-link active" href="#">PRODUCT</a>
+                  <a class="nav-link active" href="#">ABOUT</a>
+                  <a class="nav-link active" href="#">CONTACT</a>
+                  <a class="nav-link active" href="#">ADMIN</a>
+                  <a class="nav-link active" href="#">CART</a>
+                  <a class="nav-link active"><i class="fa-regular fa-cart-shopping"></i></a>
+                </div>
+              </div>
+            </div>
+        </nav>
+    </header>
     <!-- End of Header -->
 
     <!-- Main -->
-    <main></main>
+    <main class="landingArea">
+        <!-- Bootstrap Carousel: Slide Only -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img src="https://i.postimg.cc/Vv8x2tJk/DSC06284-scaled.jpg" alt="" class="w-100" width="800" height="729">
+              </div>
+              <div class="carousel-item active">
+                <img src="https://i.postimg.cc/jqpwwFyV/05-scaled.jpg" alt="" class="w-100" width="800" height="729">
+              </div>
+              <div class="carousel-item">
+                <img src="https://i.postimg.cc/FsSST4hs/landing-Page1.jpg" alt="" class="w-100" width="800" height="729">
+              </div>
+              <div class="landingHead-container">
+                <h1 class="landingHead">BE DIFFERENT</h1>
+              </div>
+            </div>
+        </div>
+        <!-- End of Bootstrap Carousel: Slide Only -->
+
+        <!-- Landing About -->
+        <div class="animationHeading" id=""animationHeading>
+            <h1>NEW MERCH</h1>
+        </div>
+        <div class="landingAbout w-100" id="landingAbout">
+            <div id="landingDescription">
+              <h4>We aims to meet the demand for high quality streetwear in South Africa – Blending anime merch and streetwear into something you can wear every day. On our website you’ll find streetwear for men and women, from crop tops and hoodies to techwear pants,
+                accessories and dope kicks. We grew tired of waiting months for international purchases and low quality “print on demand” sites. 
+                Keep an eye out as we grow into the number one anime streetwear brand in South Africa!</h4>
+            </div>
+            <div class="landingImage">
+              <img src="https://i.postimg.cc/YSGBwHjS/Pants-Category-1.jpg" alt="">
+            </div>
+        </div>
+        <!-- End of Landing About -->
+    </main>
     <!-- End of Main -->
 
     <!-- Footer -->
-    <footer></footer>
+    <footer class="footerNav w-100" id="footerNav">
+        <div class="footerNavContainer">
+            <div class="footerRights">
+                &copy; 2023 All Rights Reserved | <a href="/index.html">Home</a> | <a href="/HTML/contact.html">Contact</a> | <a href="/HTML/admin.html">Admin</a>
+            </div>
+        </div>
+    </footer>
     <!-- Footer -->
 
     <!-- JavaScript Ext -->

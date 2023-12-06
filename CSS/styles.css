@@ -1,3 +1,67 @@
+/* HOME, SHOP, ABOUT, CONTACT, ADMIN, CART */
+/* footer */
+.footerNavContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.footerNav {
+    color: black;
+   
+}
+
+#footerNav {
+    margin-top: 1%;
+}
+
+.footerNav ul {
+   list-style: none;
+
+}
+
+footer {
+    background-color: white;
+    height: 40px;
+    display: absolute;
+    bottom: 0; 
+}
+/* END OF HOME, SHOP, ABOUT, CONTACT, ADMIN, CART */
+
+
+/* HOME PAGE */
+/* Landing About */
+/* Landing Animation */
+.animationHeading {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: red;
+}
+
+#landingAbout {
+    display: flex;
+    background-color: black;
+    height: 50%;
+}
+ 
+#landingDescription {
+    width: 50$;
+    color: white;
+    padding: 10%;
+    padding-left: 10%;
+    padding-right: 30%;
+}
+
+/* Landing Page Image */
+.landingImage {
+    padding: 10%;
+    padding-right: 5%;
+    padding-left: 0%;
+    /* margin-bottom: 100%; */
+}
+/* MEDIA QUERY HOME PAGE */
+/* END OF HOME PAGE */
+
 /* ABOUT PAGE */
 /* MEDIA QUERY ABOUT PAGE */
 /* END OF ABOUT PAGE */
