@@ -57,15 +57,33 @@ window.onload = function onload() {
     // returning items and the index of the object
 let products = product.map(function(item, index) {
     return `
-    <div class="card" style="width: 18rem;">
-    <image class="img-fluid" src='${item.url}'>
-    <h5>${item.name}</h5>
-    <p>${item.description}</p>
-    <h4>${item.price}</h4>
-    <a href="#" class="btn btn-primary"><button class="delete">Delete</button></a>
+    <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Price</th>
+              <th scope="col">URL</th>
+              <th scope="col">CRUD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>${item.name}</td>
+              <td>${item.description}</td>
+              <td>${item.price}</td>
+              <td><img src =${item.url}</td>
+              <td><button class="delete btn btn-primary">Delete</button>
+              <button class="btn btn-primary" data-add value="${index}">Add To Cart</button></td>
+            </tr>
+          </tbody>
+        </table>
     </div>
-`
+    `
 });
+
 mainProduct.innerHTML = products.join("");
 }
 

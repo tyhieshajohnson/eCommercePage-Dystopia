@@ -4,14 +4,7 @@ let toCart = document.querySelector('#toCart'); //calling by id
 let purchased = JSON.parse(localStorage.getItem('purchased')) || [];
 let purchasedProduct = [];
 let mainProduct = document.getElementById('mainProduct');
-// function add(product,index) {
-//     console.log('add');
-//     // adds new element at the ned with a new length
-//     purchased.push(product[index]);
-//     // ccreating a new value
-//     localStorage.setItem('purchased', JSON.stringify(purchased));
-//     // add your function of the counter this function goes ontop of this one you making here
-// }
+
 // Add to cart
 function addToCart() {
     // 
@@ -31,6 +24,17 @@ function addToCart() {
     mainProduct.innerHTML = product
 };
 addToCart()
+
+
+// function add(product,index) {
+//     console.log('add');
+//     // adds new element at the ned with a new length
+//     purchased.push(product[index]);
+//     // ccreating a new value
+//     localStorage.setItem('purchased', JSON.stringify(purchased));
+//     // add your function of the counter this function goes ontop of this one you making here
+// }
+
 // function preparePurchase() {
 //     // Remove from cart
 //     let removeFromCart = document.getElementsByClassName('removeCart');

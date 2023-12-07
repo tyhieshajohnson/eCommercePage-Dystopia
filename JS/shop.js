@@ -34,4 +34,4 @@ mainProduct.addEventListener('click', function(event) {
 
 console.log(localStorage.getItem('product'));
 
-// Loader
+// Product Sorting and Filtering

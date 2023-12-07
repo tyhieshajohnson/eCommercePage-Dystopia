@@ -89,6 +89,16 @@ footer {
     max-width: 10%;
     height: 70px;
 }
+
+.modalContainer {
+    margin-top: 5%;
+    margin-left: 75%;
+}
+
+.table-Container {
+    padding: 10%;
+    padding-top: 5%;
+}
 /* MEDIA QUERY ADMIN PAGE */
 /* END OF ADMIN PAGE */
 
