@@ -97,6 +97,68 @@ footer {
 /* END OF CART PAGE */
 
 /* CONTACT PAGE */
+#form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contactHeading {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.contactMain {
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+.contactInfo {
+    display: flex;
+    justify-content: center;
+}
+
+.contactForm {
+    background-color: black;
+    width: 800px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#contactForm form{
+    display: flex;
+    justify-content: center;
+    margin-top: 100%;
+    padding: 20%;
+}
+
+.contactBody {
+    overflow: hidden;
+}
+
+label {
+    color: white;
+}
+
+/* Store Times */
+.storeTime-container {
+    background-color: black;
+    height: 300px;
+    margin-top: 1%;
+}
+
+.storeTimeHeading {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.storeTimes {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
 /* MEDIA QUERY CONTACT PAGE */
 /* END OF CONTACT PAGE */
 

@@ -17,15 +17,117 @@
 </head>
 <body>
     <!-- Header -->
-    <header></header>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">DYSTOPIA</i></a></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                  <a class="nav-link active" href="/HTML/shop.html">PRODUCT</a>
+                  <a class="nav-link active" href="/HTML/about.html">ABOUT</a>
+                  <a class="nav-link active" href="/HTML/contact.html">CONTACT</a>
+                  <a class="nav-link active" href="/HTML/admin.html">ADMIN</a>
+                  <a class="nav-link active" href="/HTML/cart.html">CART</a>
+                  <a class="nav-link active"><i class="fa-regular fa-cart-shopping"></i></a>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <!-- End of Navigation Bar -->
+    </header>
     <!-- End of Header -->
 
     <!-- Main -->
-    <main></main>
+    <main>
+        <!-- Heading -->
+        <div class="contactHeading">
+            <div class="contactMain"><h1>CONTACT US</h1></div>
+        </div>
+        <div class="contactInformation">
+            <div class="contactInfo"><p>We're here to help! Feel free to send us a message - just fill out the contact form below and we'll get back to you as soon as we can.</p></div>
+        </div>
+        <!-- Bootstrap Form -->
+        <div id="form-container">
+            <form class="needs-validation contactForm" id="contactForm" novalidate action="https://formspree.io/f/xnqkenro"
+            method="POST">
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">First name</label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">Last name</label>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom03">Phone Number</label>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="Phone Number" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid phone number.
+                    </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom03">Comment</label>
+                      <input type="text" class="form-control" id="validationCustom04" placeholder="Comment" required>
+                      <div class="invalid-feedback">
+                        Let Us Know?
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-dark" type="submit">Submit form</button>
+                </div>
+              </form>
+        </div>
+        <!-- End of Form -->
+
+        <!-- Store Times -->
+        <div class="storeTime-container">
+            <div class="storeTime">
+                <!-- Store Time Heading -->
+                <div class="storeTimeHeading">
+                    <h1>Store Times:</h1>
+                </div>
+                <div class="storeTimes">
+                    <h3>Monday : 09:00 - 17:00 <br>
+                        Tuesday : 09:00 - 17:00 <br>
+                        Wednesday : 09:00 - 17:00 <br>
+                        Thursday : 09:00 - 17:00 <br>
+                        Friday : 09:00 - 15:30 <br>
+                        Weekends & Public Holidays : Closed</h3>
+                </div>
+                <!-- Store Time Div -->
+                <div class="Icons">
+                    <a href="https://github.com/tyhieshajohnson""><i class="fa-brands fa-github githubIcon" style="color: #ffffff;"></i></a>
+                    <a href="https://www.instagram.com/gold4n.ace/"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- End of Main -->
+    </main>
     <!-- End of Main -->
 
     <!-- Footer -->
-    <footer></footer>
+    <footer class="footerNav w-100" id="footerNav">
+        <div class="footerNavContainer">
+            <div class="footerRights">
+                &copy; 2023 All Rights Reserved | <a href="/index.html">Home</a> | <a href="/HTML/contact.html">Contact</a> | <a href="/HTML/admin.html">Admin</a>
+            </div>
+        </div>
+    </footer>
     <!-- Footer -->
 
     <!-- JavaScript Ext -->
