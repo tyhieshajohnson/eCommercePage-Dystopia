@@ -25,7 +25,7 @@ function add(index) {
     purchased = JSON.parse(localStorage.getItem('purchased'));
 }
 
-mainProduct.addEventListener('click', function() {
+mainProduct.addEventListener('click', function(event) {
     console.log('Event Listener clicked');
     if (event.target.hasAttribute('data-add')) {
        add(event.target.value)
@@ -33,3 +33,5 @@ mainProduct.addEventListener('click', function() {
 });
 
 console.log(localStorage.getItem('product'));
+
+// Loader
