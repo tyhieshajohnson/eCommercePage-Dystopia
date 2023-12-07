@@ -67,6 +67,29 @@ footer {
 /* END OF ABOUT PAGE */
 
 /* ADMIN PAGE */
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 1fr 1fr 1fr 1fr;
+    background-color: white;
+    padding: 10%;
+}
+
+#mainProduct {
+    /* background-color: white; */
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.gridProduct {
+    flex: 0 0 calc(33.33% - 20px);
+    padding: 10px;
+}
+
+.gridProduct img {
+    max-width: 10%;
+    height: 70px;
+}
 /* MEDIA QUERY ADMIN PAGE */
 /* END OF ADMIN PAGE */
 

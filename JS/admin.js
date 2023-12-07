@@ -37,10 +37,10 @@ let product10 = new Product(10, "Tshirt", "Description", 250, 'https://i.postimg
 // Product11
 let product11 = new Product(11, "Tshirt", "Description", 250, 'https://i.postimg.cc/jqX0GQJ7/01-820x820.jpg', 'Tshirt')
 // Product12
-let Product12 = new Product(12, "Tshirt", "Description", 250, 'https://i.postimg.cc/QNHYq2rV/COVER-1-scaled-600x600.jpg', 'Tshirt')
+let product12 = new Product(12, "Tshirt", "Description", 250, 'https://i.postimg.cc/QNHYq2rV/COVER-1-scaled-600x600.jpg', 'Tshirt')
 
 // pushing intems into an array storing
-product.push(product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, Product13);
+product.push(product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12);
 
 // items is the 'key' and the name of the array here
 // how to store in local storage:
@@ -51,7 +51,7 @@ localStorage.setItem('product',JSON.stringify(product));
 // sets the array from local storage to to array (item) in code
 product = JSON.parse(localStorage.getItem('product'));
 
-window.onload = function() {
+window.onload = function onload() {
 
     // looping through every object in the array (.map)
     // returning items and the index of the object
@@ -75,16 +75,22 @@ let deleteButton = document.querySelector('.delete');
 mainProduct.addEventListener('click', function(){
     // using a conditional statement by declaring the button that is clicked
     if (event.target.classList.contains('delete')){
-        // remove()
+        remove()
         // alert('event.targer.value)');
         remove(event.target.value)
     }
 });
 
-mainProduct.innerHTML = products.join('');
+function remove(item,index) {
+    product.splice(index,1)
+    updateLocal()
+    onload()
+}
 
-function favourite(){
-localStorage.setItem('items',JSON.stringify(items));
+mainProduct.innerHTML = product.join('');
+
+function updateLocal(){
+localStorage.setItem('product',JSON.stringify(product));
 //sets the array from local storage array(items)in code
-product = JSON.parse(localStorage.getItem('items'));
+product = JSON.parse(localStorage.getItem('product'));
 }
