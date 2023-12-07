@@ -70,7 +70,7 @@ let products = product.map(function(item, index) {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
+              <th scope="row">${item.id}</th>
               <td>${item.name}</td>
               <td>${item.description}</td>
               <td>${item.price}</td>
@@ -110,3 +110,60 @@ localStorage.setItem('product',JSON.stringify(product));
 //sets the array from local storage array(items)in code
 product = JSON.parse(localStorage.getItem('product'));
 }
+
+// Modal Functioning 
+// document.getElementById('createProducts')
+// .addEventListener('click', productCreationModal(){
+//     function createProducts(event) {
+//         event.preventDefault();
+        
+//         let nameInput = document.getElementById('nameInput');
+//         let descriptionInput = document.getElementById('descriptionInput');
+//         let priceInput = document.getElementById('priceInput');
+//         let urlInput = document.getElementById('urlInput');
+//         let typeInput = document.getElementById('typeInput');
+
+//         if (isNaN(nameInput) || !nameInput || !priceInput || !urlInput || !typeInput) {
+//             alert("Please add in all values.");
+//             return;
+//           }
+//     }
+// };
+
+function createProduct(){
+    // intialize the id counter
+    let id = product.length
+    // create
+    let productCreation = new Product(++id, nameInput.value, descriptionInput.value, priceInput.value, urlInput.value, typeInput.value);
+    productCreation.push(product);
+    localStorage.setItem('product', JSON.stringify(product));
+    // Display the product
+    return `
+    <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Price</th>
+              <th scope="col">URL</th>
+              <th scope="col">CRUD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">${item.id}</th>
+              <td>${item.nameInput}</td>
+              <td>${item.description}</td>
+              <td>${item.price}</td>
+              <td><img src =${item.url}</td>
+              <td><button class="delete btn btn-primary">Delete</button>
+              <button class="btn btn-primary" data-add value="${index}">Add To Cart</button></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    `
+}
+
+// Attaching function to button element

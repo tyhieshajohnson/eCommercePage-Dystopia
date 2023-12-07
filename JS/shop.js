@@ -11,7 +11,7 @@ mainProduct.innerHTML = product.map(function(item, index) {
     <img class="img-fluid" src='${item.url}'>
     <h5>${item.name}</h5>
     <p>${item.description}</p>
-    <h4>${item.price}</h4>
+    <h4 class="priceFilter">${item.price}</h4>
     <button class="btn btn-primary" data-add value="${index}">Add To Cart</button>
     </div>
 `
@@ -35,3 +35,12 @@ mainProduct.addEventListener('click', function(event) {
 console.log(localStorage.getItem('product'));
 
 // Product Sorting and Filtering
+function filterProducts(products) {
+    let searchItems = searchInput.value;
+    let productPrice = priceFilter.value;
+
+    priceFilter.textContent = '${[productPrice]}';
+
+    // products.forEach(function(product => {
+    //     let title = product.querySelector('.mainProduct').textContent
+};
