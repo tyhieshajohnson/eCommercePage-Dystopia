@@ -112,33 +112,28 @@ product = JSON.parse(localStorage.getItem('product'));
 }
 
 // Modal Functioning 
-// document.getElementById('createProducts')
-// .addEventListener('click', productCreationModal(){
-//     function createProducts(event) {
-//         event.preventDefault();
-        
-//         let nameInput = document.getElementById('nameInput');
-//         let descriptionInput = document.getElementById('descriptionInput');
-//         let priceInput = document.getElementById('priceInput');
-//         let urlInput = document.getElementById('urlInput');
-//         let typeInput = document.getElementById('typeInput');
-
-//         if (isNaN(nameInput) || !nameInput || !priceInput || !urlInput || !typeInput) {
-//             alert("Please add in all values.");
-//             return;
-//           }
-//     }
-// };
 
 function createProduct(){
     // intialize the id counter
-    let id = product.length
-    // create
+    let id = product.length + 1
+
+    // retrieve input values with unique id names
+    let name = document.querySelector('#nameInput').value;
+    let description = document.querySelector('#descriptionnInput').value;
+    let price =  document.querySelector('#priceInput').value;
+    let url =  document.querySelector('#urlInput').value;
+    let type =  document.querySelector('#typeInput').value;
+
+    // create new Product
     let productCreation = new Product(++id, nameInput.value, descriptionInput.value, priceInput.value, urlInput.value, typeInput.value);
-    productCreation.push(product);
-    localStorage.setItem('product', JSON.stringify(product));
+    // push new product into array
+    product.push(productCreation);
+    // localStorage updating
+    updateLocal();
+
     // Display the product
-    return `
+    mainProduct.innerHTML +=
+    `
     <table class="table table-dark">
           <thead>
             <tr>
@@ -152,13 +147,14 @@ function createProduct(){
           </thead>
           <tbody>
             <tr>
-              <th scope="row">${item.id}</th>
-              <td>${item.nameInput}</td>
-              <td>${item.description}</td>
-              <td>${item.price}</td>
-              <td><img src =${item.url}</td>
-              <td><button class="delete btn btn-primary">Delete</button>
-              <button class="btn btn-primary" data-add value="${index}">Add To Cart</button></td>
+            <th scope="row">${productCreation.id}</th>
+            <td>${productCreation.name}</td>
+            <td>${productCreation.description}</td>
+            <td>${productCreation.price}</td>
+            <td><img src="${productCreation.url}" alt="Product Image"></td>
+            <td>
+                <button class="delete btn btn-primary" data-delete="${id}">Delete</button>
+                <button class="btn btn-primary" data-add value="${id}">Add To Cart</button>
             </tr>
           </tbody>
         </table>
@@ -166,4 +162,15 @@ function createProduct(){
     `
 }
 
-// Attaching function to button element
+// Save Changes Button
+let save = document.getElementById('createProducts');
+save.addEventListener('click', createProduct);
+
+// Delete button
+mainProduct.addEventListener('click', function (event) {
+  if (event.target.classList.contains('delete')) {
+    // delete by ID
+    let deleteById = event.target.dataset.delete;
+    remove(deleteById);
+  }
+});
