@@ -56,8 +56,6 @@ window.onload = function onload() {
     // looping through every object in the array (.map)
     // returning items and the index of the object
 let products = product.map(function(item, index) {
-    console.log(item);
-    console.log(index);
     return `
     <div class="card" style="width: 18rem;">
     <image class="img-fluid" src='${item.url}'>
