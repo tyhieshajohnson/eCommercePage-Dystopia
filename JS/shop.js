@@ -1,8 +1,9 @@
 let mainProduct = document.querySelector('main');
 
-let product = JSON.parse(localStorage.getItem('product')) || [];; 
+let product = JSON.parse(localStorage.getItem('product')) //|| [];; 
 
-let purchased = JSON.parse(localStorage.getItem('purchased')) || [];;
+let purchased = [];
+// purchased = JSON.parse(localStorage.getItem('purchased')) //|| [];;
 
 mainProduct.innerHTML = product.map(function(item, index) {
     return `
@@ -11,7 +12,7 @@ mainProduct.innerHTML = product.map(function(item, index) {
     <h5>${item.name}</h5>
     <p>${item.description}</p>
     <h4>${item.price}</h4>
-    <a href="#" class="btn btn-primary" data-add="${item.index}"><button>Add To Cart</button></a>
+    <button class="btn btn-primary" data-add value="${index}">Add To Cart</button>
     </div>
 `
 }).join('');
@@ -21,12 +22,14 @@ function add(index) {
     purchased.push(product[index]);
     // ccreating a new value
     localStorage.setItem('purchased', JSON.stringify(purchased));
-    // purchased = JSON.parse(localStorage.getItem('purchased'));
+    purchased = JSON.parse(localStorage.getItem('purchased'));
 }
 
-mainProduct.addEventListener('click', function(event) {
-    if (event.target.hasAttribute('[data-add]')) {
-        let index = event.target.getAttribute('[data-index]').dataset.index;
-        add(index);
+mainProduct.addEventListener('click', function() {
+    console.log('Event Listener clicked');
+    if (event.target.hasAttribute('data-add')) {
+       add(event.target.value)
     }
 });
+
+console.log(localStorage.getItem('product'));
