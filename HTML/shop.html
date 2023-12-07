@@ -36,6 +36,15 @@
                   <a class="nav-link active"><i class="fa-regular fa-cart-shopping"></i></a>
                   <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <select class="form-select typeFilter" aria-label="Type filter">
+                      <option value="all">Sort</option>
+                      <!-- Add each item type -->
+                      <option value="type1">Headwear</option>
+                      <option value="type2">Tshirt</option>
+                      <option value="type2">Crop-Tops</option>
+                      <option value="type2">Pants</option>
+                      <!-- ... add more options as needed ... -->
+                  </select>
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
                 </div>
@@ -54,7 +63,7 @@
                 <div class="container-fluid">
                   <form class="d-flex" role="search">
                     <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success searchInput-btn" type="submit">Search</button>
                   </form>
                 </div>
             </nav>

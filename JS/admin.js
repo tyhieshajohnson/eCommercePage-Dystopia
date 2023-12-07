@@ -15,29 +15,29 @@ function Product (id, name, description, price, url, type) {
 
 // Creating the object
 // Product 1
-let product1 = new Product(1, "Tshirt", "Description", 250, 'https://i.postimg.cc/Zq1NjHnX/rgergegeg-768x768.png', 'Shirt')
+let product1 = new Product(1, "ANTI SOCIAL HENTAI CLUB TEE", "100% organic cotton blend.", 350, 'https://i.postimg.cc/Zq1NjHnX/rgergegeg-768x768.png', 'Tshirt')
 // Product2
-let product2 = new Product(2, "Jersey", "Description", 250, 'https://i.postimg.cc/pTrF2S79/DSC07691-1-1536x1536.jpg', 'Shirt')
+let product2 = new Product(2, "DEMON MODE, BLACK CLOVER - KNITTED SWEATER", "Nothing last longer than knitwear, will never fade because the design is woven into the clothing.", 700, 'https://i.postimg.cc/pTrF2S79/DSC07691-1-1536x1536.jpg', 'Tshirt')
 // Product3
-let product3 = new Product(3, "Tshirt", "Description", 250, 'https://i.postimg.cc/WbBC0Lwv/5-768x768.jpg', 'Shirt')
+let product3 = new Product(3, "YANDERE WHITE TEE - RELEASE", "100% organic cotton blend.", 300, 'https://i.postimg.cc/WbBC0Lwv/5-768x768.jpg', 'Shirt')
 // Product4
-let product4 = new Product(4, "Crop-Top", "Description", 250, 'https://i.postimg.cc/Y03V7hmf/cover-768x768.jpg', 'Croptop')
+let product4 = new Product(4, "ENVY - CUT OUT FITTED HALTER TOP", "Made from soft, stretchy and comfortable material.", 330, 'https://i.postimg.cc/Y03V7hmf/cover-768x768.jpg', 'Croptop')
 // Product5
-let product5 = new Product(5, "Tshirt", "Description", 250, 'https://i.postimg.cc/wBN6h8P8/Senpai03.jpg', 'Tshirt')
+let product5 = new Product(5, "CALL ME SENPAI", "100% organic cotton blend.", 300, 'https://i.postimg.cc/wBN6h8P8/Senpai03.jpg', 'Tshirt')
 // Product6
-let product6 = new Product(6, "Tshirt", "Description", 250, 'https://i.postimg.cc/CLfSyVhZ/IMG-8797-768x768.jpg', 'Tshirt')
+let product6 = new Product(6, "RORONOA ZOROR WHITE TEE", "100% organic cotton blend.", 350, 'https://i.postimg.cc/CLfSyVhZ/IMG-8797-768x768.jpg', 'Tshirt')
 // Product7
-let product7 = new Product(7, "Tshirt", "Description", 250, 'https://i.postimg.cc/xCygN83k/fgfhr-768x768.jpg', 'Tshirt')
+let product7 = new Product(7, "LUFFY X JOYBOY BLACK TEE", "100% organic cotton blend.", 300, 'https://i.postimg.cc/xCygN83k/fgfhr-768x768.jpg', 'Tshirt')
 // Product8
-let product8 = new Product(8, "Tshirt", "Description", 250, 'https://i.postimg.cc/PxsTr3SX/cover-2-1536x1536.jpg', 'Tshirt')
+let product8 = new Product(8, "ENVY - FEMALE CARGO PANTS, GREY", "Pleated knees for sillouette. Adjustable hem with drawstrings.", 700, 'https://i.postimg.cc/PxsTr3SX/cover-2-1536x1536.jpg', 'Pants')
 // Product19
-let product9 = new Product(9, "Tshirt", "Description", 250, 'https://i.postimg.cc/PrM74kcG/4-1-scaled-570x570_(1).jpg', 'Headwear')
+let product9 = new Product(9, "BALACLAVA", "Description", 250, 'https://i.postimg.cc/PrM74kcG/4-1-scaled-570x570_(1).jpg', 'Headwear')
 // Product10
-let product10 = new Product(10, "Tshirt", "Description", 250, 'https://i.postimg.cc/tJnfnf3m/landingPage1.jpg', 'Pants')
+let product10 = new Product(10, "WE DID IT BETTER BLACK CARGO", "Comfortable, stretchable waist and metal tipped drawstrings.", 699.99, 'https://i.postimg.cc/tJnfnf3m/landingPage1.jpg', 'Pants')
 // Product11
-let product11 = new Product(11, "Tshirt", "Description", 250, 'https://i.postimg.cc/jqX0GQJ7/01-820x820.jpg', 'Tshirt')
+let product11 = new Product(11, "PHANTOM WHITE TEE", "100% organic cotton blend.", 290, 'https://i.postimg.cc/jqX0GQJ7/01-820x820.jpg', 'Tshirt')
 // Product12
-let product12 = new Product(12, "Tshirt", "Description", 250, 'https://i.postimg.cc/QNHYq2rV/COVER-1-scaled-600x600.jpg', 'Tshirt')
+let product12 = new Product(12, "DREAMING WHITE TEE", "100% organic cotton blend.", 290, 'https://i.postimg.cc/QNHYq2rV/COVER-1-scaled-600x600.jpg', 'Tshirt')
 
 // pushing intems into an array storing
 product.push(product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12);
