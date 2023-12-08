@@ -1,4 +1,6 @@
 /* HOME, SHOP, ABOUT, CONTACT, ADMIN, CART */
+/* Google Fonts Ext */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 /* footer */
 .footerNavContainer {
     display: flex;
@@ -59,6 +61,19 @@ footer {
     padding-left: 0%;
     /* margin-bottom: 100%; */
 }
+
+.landingHead {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
 /* MEDIA QUERY HOME PAGE */
 /* END OF HOME PAGE */
 
@@ -97,6 +112,10 @@ description h4 {
     background-color: white;
 }
 
+/* .gridContainer {
+    display: inline;
+} */
+
 #mainProduct {
     /* background-color: white; */
     border-radius: 10px;
@@ -104,8 +123,7 @@ description h4 {
 }
 
 .gridProduct {
-    flex: 0 0 calc(33.33% - 20px);
-    padding: 10px;
+    padding: 10%;
 }
 
 .gridProduct img {
@@ -126,6 +144,13 @@ description h4 {
 /* END OF ADMIN PAGE */
 
 /* CART PAGE */
+.table-dark {
+    display: inline-table;
+}
+
+.img-cart {
+    width: 30%;
+}
 /* MEDIA QUERY CART PAGE */
 /* END OF CART PAGE */
 

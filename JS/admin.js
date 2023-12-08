@@ -1,7 +1,13 @@
 // Variable for Products
+let deleteButton = document.querySelector('.delete');
 let product = []
 
-mainProduct = document.querySelector('#mainProduct')
+mainProduct = document.querySelector('#mainProduct');
+let searchInput = document.querySelector('.searchInput');
+let priceFilter = document.querySelector('.priceFilter');
+let typeFilter = document.querySelector('.typeFilter');
+let filteredProducts = [];
+let purchased = []; 
 
 // Contrustor function to create objects
 function Product (id, name, description, price, url, type) {
@@ -87,7 +93,6 @@ let products = product.map(function(item, index) {
 mainProduct.innerHTML = products.join("");
 }
 
-let deleteButton = document.querySelector('.delete');
 mainProduct.addEventListener('click', function(){
     // using a conditional statement by declaring the button that is clicked
     if (event.target.classList.contains('delete')){
@@ -112,7 +117,6 @@ product = JSON.parse(localStorage.getItem('product'));
 }
 
 // Modal Functioning 
-
 function createProduct(){
     // intialize the id counter
     let id = product.length + 1
@@ -125,14 +129,17 @@ function createProduct(){
     let type =  document.querySelector('#typeInput').value;
 
     // create new Product
-    let productCreation = new Product(++id, nameInput.value, descriptionInput.value, priceInput.value, urlInput.value, typeInput.value);
+    let productCreation = new Product(++id, name, description, price, url, type);
     // push new product into array
     product.push(productCreation);
+    // setting the new product
+    localStorage.setItem(localStorage('product',JSON.stringify(product)));
     // localStorage updating
-    updateLocal();
+    updateLocal(product);
 
+    mainProduct.innerHTML = ""
     // Display the product
-    mainProduct.innerHTML +=
+    // mainProduct.innerHTML +=
     `
     <table class="table table-dark">
           <thead>
@@ -153,8 +160,8 @@ function createProduct(){
             <td>${productCreation.price}</td>
             <td><img src="${productCreation.url}" alt="Product Image"></td>
             <td>
-                <button class="delete btn btn-primary" data-delete="${id}">Delete</button>
-                <button class="btn btn-primary" data-add value="${id}">Add To Cart</button>
+              <button class="delete btn btn-light" data-delete="${id}">Delete</button>
+              <button class="btn btn-light" data-add value="${id}">Add To Cart</button>
             </tr>
           </tbody>
         </table>
@@ -174,3 +181,42 @@ mainProduct.addEventListener('click', function (event) {
     remove(deleteById);
   }
 });
+
+// search and sorting
+// function to filter products (search and sort)
+function updateProducts() {
+  let filteredProducts = product.slice();
+  let searchTerm = searchInput.value.toLowerCase();
+
+  if (searchTerm) {
+      filteredProducts = filteredProducts.filter(item =>
+          item.name.toLowerCase().includes(searchTerm) || 
+          item.description.toLowerCase().includes(searchTerm) ||
+          item.type.toLowerCase().includes(searchTerm)
+      );
+  }
+
+  let selectedType = typeFilter.value.toLowerCase();
+  if (selectedType !== 'all') {
+      filteredProducts = filteredProducts.filter(item => item.type.toLowerCase() === selectedType);
+  }
+
+  mainProduct.innerHTML = filteredProducts.map(function (item, index) {
+      return `
+      <div class="card" style="width: 18rem;">
+          <img class="img-fluid" src='${item.url}'>
+          <h5>${item.name}</h5>
+          <p>${item.type}</p>
+          <p>${item.description}</p>
+          <h4 class="priceFilter">${item.price}</h4>
+          <button class="btn btn-success" data-add value="${index}">Add To Cart</button>
+      </div>
+      `;
+  }).join('');
+}
+
+function add(index) {
+  purchased.push(product[index]);
+  localStorage.setItem('purchased', JSON.stringify(purchased));
+  purchased = JSON.parse(localStorage.getItem('purchased'));
+}
