@@ -98,9 +98,13 @@ function total() {
     });
 }
 
+// the anonymous function passed as the second argument to addEventListener is executed
 document.addEventListener("DOMContentLoaded", function () {
+    // This function uses the setTimeout method to delay the execution 
     setTimeout(function () {
+        // After the delay, the function sets the display property of the loaderOverlay element to none, effectively hiding it from view
       document.getElementById("loaderOverlay").style.display = "none";
+    // and sets the display property of the displayContent element to block, making it visible 2.
       document.getElementById("displayContent").style.display = "block";
     }, 1000);
 });
