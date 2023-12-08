@@ -25,6 +25,11 @@
     .btn-search {
       padding-right: 5%;
     }
+    .spinner-border {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     </style>
 </head>
 <body>
@@ -53,41 +58,47 @@
     </header>
     <!-- End of Header -->
 
+    <!-- Loader -->
+    <div class="spinner-border text-dark" id="loaderOverlay" role="status">
+      <div class="spinner"></div>
+    </div>
+    <!-- End of Loader --><!-- Bootstrap Ext -->
+
     <!-- Main -->
+    <div id="displayContent" style="display: none;">
     <main>
-        <!-- Bootstrap Ext -->
-        <!-- Bootstrap Search Bar -->
+      <!-- Bootstrap Search Bar -->
         <!-- Search Bar -->
         <div class="searchBar-container" id="searchBar-conntainer">
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-search btn-outline-dark searchInput-btn" type="submit">Search</button>
-                  </form>
-                </div>
-            </nav>
-        </div>
-        <!-- Sorting -->
-        <form class="d-flex" role="search">
-          <select class="form-select typeFilter" aria-label="Type filter">
-            <option value="all">All</option>
-            <!-- Add each item type -->
-            <option value="Headwear">Headwear</option>
-            <option value="Tshirt">Tshirt</option>
-            <option value="Crop-tops">Crop-tops</option>
-            <option value="Pants">Pants</option>
-            <!-- ... add more options as needed ... -->
-        </select>
-        </form>
-        <!-- End of Bootstrap Ext -->
-
+          <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-search btn-outline-dark searchInput-btn" type="submit">Search</button>
+                </form>
+              </div>
+          </nav>
+      </div>
+      <!-- Sorting -->
+      <form class="d-flex" role="search">
+        <select class="form-select typeFilter" aria-label="Type filter">
+          <option value="all">All</option>
+          <!-- Add each item type -->
+          <option value="Headwear">Headwear</option>
+          <option value="Tshirt">Tshirt</option>
+          <option value="Crop-tops">Crop-tops</option>
+          <option value="Pants">Pants</option>
+          <!-- ... add more options as needed ... -->
+      </select>
+      </form>
+      <!-- End of Bootstrap Ext -->
         <!-- Products -->
         <div>
             <div id="mainProduct" class="gridContainer"></div>
         </div>
         <!-- Product End -->
     </main>
+  </div>
     <!-- End of Main -->
 
     <!-- Footer -->

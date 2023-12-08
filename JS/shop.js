@@ -1,8 +1,11 @@
+//variables cretaed targeting ids and class names
 let mainProduct = document.querySelector('#mainProduct');
+//loader event listener
 let searchInput = document.querySelector('.searchInput');
 let priceFilter = document.querySelector('.priceFilter');
 let typeFilter = document.querySelector('.typeFilter');
 let sumOfBtn = document.querySelector('#sumOfBtn');
+//empty arrays
 let filteredProducts = [];
 let purchased = []; 
 
@@ -10,7 +13,7 @@ let purchased = [];
 function updateProducts() {
     let filteredProducts = product.slice();
     let searchTerm = searchInput.value.toLowerCase();
-
+    //search bar
     if (searchTerm) {
         filteredProducts = filteredProducts.filter(item =>
             item.name.toLowerCase().includes(searchTerm) || 
@@ -18,12 +21,12 @@ function updateProducts() {
             item.type.toLowerCase().includes(searchTerm)
         );
     }
-
+    //sorting
     let selectedType = typeFilter.value.toLowerCase();
     if (selectedType !== 'all') {
         filteredProducts = filteredProducts.filter(item => item.type.toLowerCase() === selectedType);
     }
-
+    //iterate this onto the display
     mainProduct.innerHTML = filteredProducts.map(function (item, index) {
         return `
         <div class="card" style="width: 18rem;">
@@ -37,7 +40,7 @@ function updateProducts() {
         `;
     }).join('');
 }
-
+// adding purchased products to the cart via local storage
 function add(index) {
     purchased.push(product[index]);
     localStorage.setItem('purchased', JSON.stringify(purchased));
@@ -45,7 +48,7 @@ function add(index) {
 }
 
 // function for revealing ALL products by overwriting existing if one does not exist
-function initialize() {
+function recover() {
     product = JSON.parse(localStorage.getItem('product')) || [];
     mainProduct.innerHTML = product.map(function(item, index) {
         return `
@@ -61,7 +64,7 @@ function initialize() {
         `
     }).join('');
 
-    // conditional statement: 
+    // conditional statement: if all isn't shown then search would show, or type.
     if (searchInput) {
         searchInput.addEventListener('input', updateProducts);
     }
@@ -83,7 +86,7 @@ function initialize() {
     }
 }
 
-initialize();
+recover();
 
 // Sum function
 function total() {
@@ -94,3 +97,10 @@ function total() {
         totalPrice += item.price;
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      document.getElementById("loaderOverlay").style.display = "none";
+      document.getElementById("displayContent").style.display = "block";
+    }, 1500);
+});
