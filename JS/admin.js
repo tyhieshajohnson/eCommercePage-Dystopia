@@ -12,12 +12,9 @@ function Product(id, name, description, price, url, type) {
   this.price = price;
   this.url = url;
   this.type = type;
-  this.quantity = this.quantity;
 }
-// retrieves the product using getitem (returns the value given)
-// initialize the set products
+
 if (localStorage.getItem("product")) {
-  // converting the string into an object - turning product string into an object
   product = JSON.parse(localStorage.getItem("product"));
 } else {
   // If not, initialize with default products
@@ -27,7 +24,7 @@ if (localStorage.getItem("product")) {
     "100% organic cotton blend.",
     350,
     "https://i.postimg.cc/Zq1NjHnX/rgergegeg-768x768.png",
-    "Tshirt, 0"
+    "Tshirt"
   );
   // Product2
   let product2 = new Product(
@@ -36,7 +33,7 @@ if (localStorage.getItem("product")) {
     "Nothing lasts longer than knitwear, will never fade because the design is woven into the clothing.",
     700,
     "https://i.postimg.cc/pTrF2S79/DSC07691-1-1536x1536.jpg",
-    "Tshirt, 0"
+    "Tshirt"
   );
   // Product3
   let product3 = new Product(
@@ -45,7 +42,7 @@ if (localStorage.getItem("product")) {
     "100% organic cotton blend.",
     300,
     "https://i.postimg.cc/WbBC0Lwv/5-768x768.jpg",
-    "Shirt", 0
+    "Shirt"
   );
   // Product4
   let product4 = new Product(
@@ -54,7 +51,7 @@ if (localStorage.getItem("product")) {
     "Made from soft, stretchy and comfortable material.",
     330,
     "https://i.postimg.cc/Y03V7hmf/cover-768x768.jpg",
-    "Crop-Top", 0
+    "Croptop"
   );
   // Product5
   let product5 = new Product(
@@ -63,7 +60,7 @@ if (localStorage.getItem("product")) {
     "100% organic cotton blend.",
     300,
     "https://i.postimg.cc/wBN6h8P8/Senpai03.jpg",
-    "Tshirt", 0
+    "Tshirt"
   );
   // Product6
   let product6 = new Product(
@@ -72,7 +69,7 @@ if (localStorage.getItem("product")) {
     "100% organic cotton blend.",
     350,
     "https://i.postimg.cc/CLfSyVhZ/IMG-8797-768x768.jpg",
-    "Tshirt", 0
+    "Tshirt"
   );
   // Product7
   let product7 = new Product(
@@ -81,7 +78,7 @@ if (localStorage.getItem("product")) {
     "100% organic cotton blend.",
     300,
     "https://i.postimg.cc/xCygN83k/fgfhr-768x768.jpg",
-    "Tshirt", 0
+    "Tshirt"
   );
   // Product8
   let product8 = new Product(
@@ -90,7 +87,7 @@ if (localStorage.getItem("product")) {
     "Pleated knees for silhouette. Adjustable hem with drawstrings.",
     700,
     "https://i.postimg.cc/PxsTr3SX/cover-2-1536x1536.jpg",
-    "Pants", 0
+    "Pants"
   );
   // Product19
   let product9 = new Product(
@@ -99,7 +96,7 @@ if (localStorage.getItem("product")) {
     "Description",
     250,
     "https://i.postimg.cc/PrM74kcG/4-1-scaled-570x570_(1).jpg",
-    "Headwear", 0
+    "Headwear"
   );
   // Product10
   let product10 = new Product(
@@ -108,7 +105,7 @@ if (localStorage.getItem("product")) {
     "Comfortable, stretchable waist and metal-tipped drawstrings.",
     699.99,
     "https://i.postimg.cc/tJnfnf3m/landingPage1.jpg",
-    "Pants", 0
+    "Pants"
   );
   // Product11
   let product11 = new Product(
@@ -117,7 +114,7 @@ if (localStorage.getItem("product")) {
     "100% organic cotton blend.",
     290,
     "https://i.postimg.cc/jqX0GQJ7/01-820x820.jpg",
-    "Tshirt", 0
+    "Tshirt"
   );
   // Product12
   let product12 = new Product(
@@ -126,10 +123,10 @@ if (localStorage.getItem("product")) {
     "100% organic cotton blend.",
     290,
     "https://i.postimg.cc/QNHYq2rV/COVER-1-scaled-600x600.jpg",
-    "Tshirt", 0
+    "Tshirt"
   );
 
-  // Pushing my items into an array for storage
+  // Pushing items into an array for storage
   product.push(
     product1,
     product2,
@@ -149,7 +146,6 @@ if (localStorage.getItem("product")) {
   localStorage.setItem("product", JSON.stringify(product));
 }
 
-// function creation for products to display
 function renderProducts(products) {
   let productsHTML = products.map(function (item, index) {
     return `
@@ -161,9 +157,7 @@ function renderProducts(products) {
           <th scope="col">Description</th>
           <th scope="col">Price</th>
           <th scope="col">URL</th>
-          <th scope="col">Quantity</th>
           <th scope="col">CRUD</th>
-          
         </tr>
       </thead>
       <tbody>
@@ -171,9 +165,8 @@ function renderProducts(products) {
           <th scope="row">${item.id}</th>
           <td>${item.name}</td>
           <td>${item.description}</td>
-          <td>R${item.price}</td>
+          <td>${item.price}</td>
           <td><img class="admin-image" src="${item.url}"></td>
-          <td>${item.quantity}</td>
           <td>
             <button class="delete btn btn-primary" data-delete="${index}">Delete</button>
             <button class="btn btn-primary" data-add value="${index}">Add To Cart</button>
@@ -183,57 +176,44 @@ function renderProducts(products) {
     </table>
     `;
   });
-  // want element to display within the element itself - displaying it to the user
+
   mainProduct.innerHTML = productsHTML.join("");
 }
 
-// Load products from local storage on page load using the function onload
+// Load products from local storage on page load
 window.onload = function onload() {
-  // by turning the string into an object and if it does reflect, reveal a new or empty object
   product = JSON.parse(localStorage.getItem("product")) || [];
   renderProducts(product);
 };
-// event listener created to function with the delete button to remove the product from the screen
+
 mainProduct.addEventListener("click", function (event) {
   if (event.target.classList.contains("delete")) {
-    // doing this by targeting the index of the product
     let index = event.target.dataset.delete;
     remove(index);
   }
 });
-// function to aid the delete function by removing the product but returning it once we refresh the onload event
+
 function remove(index) {
-  // returns the array that was deleted
   product.splice(index, 1);
   updateLocal();
   renderProducts(product);
 }
-// function to aid the update function
+
 function updateLocal() {
-  // saves the product in localStorage
   localStorage.setItem("product", JSON.stringify(product));
-  // by turning the string into an object and if it does reflect, reveal a new or empty object
   product = JSON.parse(localStorage.getItem("product")) || [];
 }
 
-// Modal Functioning
-// function to create new product object
 function createProduct() {
-  // new variable sets its value to the length of the product array +1
-  // Assigns a unique ID to each new product
   let id = product.length + 1;
-  // variable to assign a new product using a unique ID
   let name = document.querySelector("#nameInput").value;
   let description = document.querySelector("#descriptionInput").value;
   let price = document.querySelector("#priceInput").value;
   let url = document.querySelector("#urlInput").value;
   let type = document.querySelector("#typeInput").value;
 
-  // constructor function to create a new product when added in
   let productCreation = new Product(id, name, description, price, url, type);
-  // push information in the array
   product.push(productCreation);
-  // stores in the local storagee
   localStorage.setItem("product", JSON.stringify(product));
   updateLocal();
   renderProducts(product);
@@ -252,15 +232,11 @@ mainProduct.addEventListener("click", function (event) {
 });
 
 // Search and sorting
-// function created to search and sort through all products
 function updateProducts() {
-  // variable set to return a section of the array being called
   let filteredProducts = product.slice();
-  // variable to allow lowercase values to function in search bar
   let searchTerm = searchInput.value.toLowerCase();
-  // conditional statement
+
   if (searchTerm) {
-    // callback function executed using filter to return a specified name, description and type of the product
     filteredProducts = filteredProducts.filter(
       (item) =>
         item.name.toLowerCase().includes(searchTerm) ||
@@ -269,11 +245,8 @@ function updateProducts() {
     );
   }
 
-  // new variable set with a value of typeFilter
   let selectedType = typeFilter.value.toLowerCase();
-  // Conditional statement that checks if selectedType is not equal to "all"
   if (selectedType !== "all") {
-    // filters array based on the conditional statement
     filteredProducts = filteredProducts.filter(
       (item) => item.type.toLowerCase() === selectedType
     );
