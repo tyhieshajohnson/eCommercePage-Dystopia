@@ -65,4 +65,5 @@ mainProduct.addEventListener('click', function (event) {
     }
 });
 };
+
 // End of Cart
