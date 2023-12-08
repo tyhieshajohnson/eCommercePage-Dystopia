@@ -168,7 +168,7 @@ function renderProducts(products) {
           <td>${item.price}</td>
           <td><img class="admin-image" src="${item.url}"></td>
           <td>
-          <button class="editBtn edit" onclick="editItem(${index})" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">Edit</button>
+          <button class="editBtn edit btn btn-primary" onclick="editItem(${index})" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">Edit</button>
             <button class="delete btn btn-primary" data-delete="${index}">Delete</button>
             <button class="btn btn-primary" data-add value="${index}">Add To Cart</button>
           </td>
