@@ -145,7 +145,7 @@ if (localStorage.getItem("product")) {
   // Store in local storage
   localStorage.setItem("product", JSON.stringify(product));
 }
-
+// function created to run 
 function renderProducts(products) {
   let productsHTML = products.map(function (item, index) {
     return `
@@ -185,8 +185,9 @@ window.onload = function onload() {
   product = JSON.parse(localStorage.getItem("product")) || [];
   renderProducts(product);
 };
-
+// event listener for the delete button
 mainProduct.addEventListener("click", function (event) {
+  // used target to return the delted object
   if (event.target.classList.contains("delete")) {
     let index = event.target.dataset.delete;
     remove(index);
@@ -194,26 +195,32 @@ mainProduct.addEventListener("click", function (event) {
 });
 
 function remove(index) {
+  // remove an return array object
   product.splice(index, 1);
   updateLocal();
   renderProducts(product);
 }
-
+// sets and stores data in local storage
 function updateLocal() {
   localStorage.setItem("product", JSON.stringify(product));
   product = JSON.parse(localStorage.getItem("product")) || [];
 }
 
+// modal functioning
+// function created to update the
 function createProduct() {
+  // variable created to the value of the product +1 in length
   let id = product.length + 1;
+  // accessing unique ids to add in new product in form
   let name = document.querySelector("#nameInput").value;
   let description = document.querySelector("#descriptionInput").value;
   let price = document.querySelector("#priceInput").value;
   let url = document.querySelector("#urlInput").value;
   let type = document.querySelector("#typeInput").value;
-
+// constructor function created to display new product
   let productCreation = new Product(id, name, description, price, url, type);
   product.push(productCreation);
+  // saves new object
   localStorage.setItem("product", JSON.stringify(product));
   updateLocal();
   renderProducts(product);
@@ -232,11 +239,15 @@ mainProduct.addEventListener("click", function (event) {
 });
 
 // Search and sorting
+//function created for sort and search
 function updateProducts() {
+  //returning a copy of products listed
   let filteredProducts = product.slice();
+  // toLowerCase for case sensitivity
   let searchTerm = searchInput.value.toLowerCase();
-
+  //listed products that it'll run through is name, description and type
   if (searchTerm) {
+    // filter used with callback function to return a specific element being called within an array in search bar
     filteredProducts = filteredProducts.filter(
       (item) =>
         item.name.toLowerCase().includes(searchTerm) ||
@@ -244,10 +255,13 @@ function updateProducts() {
         item.type.toLowerCase().includes(searchTerm)
     );
   }
-
+  //targeting type filtering
   let selectedType = typeFilter.value.toLowerCase();
+  // if it is not equaled to all
   if (selectedType !== "all") {
+    // run through run filter and search for type 
     filteredProducts = filteredProducts.filter(
+      //and only reveal that which is the type and nothing else
       (item) => item.type.toLowerCase() === selectedType
     );
   }
