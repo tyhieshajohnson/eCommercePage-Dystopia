@@ -28,7 +28,7 @@ function addToCart() {
               <td>${item.name}</td>
               <td>${item.description}</td>
               <td>${item.price}</td>
-              <td><img src =${item.url}</td>
+              <td><img class="img-cart" src =${item.url}</td>
               <button class="delete btn btn-light">Delete</button>
               <button class="btn btn-light" data-add value="${index}">Add To Cart</button></td>
               <td><input type="text" id="quantity" oninput="document.getElementById('#quantity').value">${item.price}</td>

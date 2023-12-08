@@ -32,7 +32,7 @@ function updateProducts() {
             <p>${item.type}</p>
             <p>${item.description}</p>
             <h4 class="priceFilter">${item.price}</h4>
-            <button class="btn btn-success" data-add value="${index}">Add To Cart</button>
+            <button class="btn btn-danger" data-add value="${index}">Add To Cart</button>
         </div>
         `;
     }).join('');

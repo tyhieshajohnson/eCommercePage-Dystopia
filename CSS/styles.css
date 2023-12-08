@@ -144,6 +144,13 @@ description h4 {
 /* END OF ADMIN PAGE */
 
 /* CART PAGE */
+.table-dark {
+    display: inline-table;
+}
+
+.img-cart {
+    width: 30%;
+}
 /* MEDIA QUERY CART PAGE */
 /* END OF CART PAGE */
 
