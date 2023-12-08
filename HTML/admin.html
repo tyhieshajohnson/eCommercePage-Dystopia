@@ -102,6 +102,45 @@
               </div>
           </nav>
       </div>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Product</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="formFields">
+              <label for="editeFormName">Name</label>
+              <input type="text" id="editedName" class="editFormInput" required />
+            </div>
+
+            <div class="formFields">
+              <label for="editeFormDescription">Description</label>
+              <input type="text" class="editFormInput" id="editedDescription" required />
+            </div>
+            <div class="formFields">
+              <label for="editeFormPrice">Price</label>
+              <input type="number" class="editFormInput" id="editedPrice" required />
+            </div>
+
+            <div class="formFields">
+              <label for="editeFormUrl">Image URL</label>
+              <input type="text" class="editFormInput" id="editedUrl" required />
+            </div>
+
+            <div class="formFields">
+              <label for="editeFormType">Type</label>
+              <input type="text" class="editFormInput" id="editedType" required />
+            </div>
+            <div class="modal-footer">
+              <button id="saveFormEdit" data-bs-dismiss="modal">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       <!-- Sorting -->
       <form class="d-flex" role="search">
         <select class="form-select typeFilter" aria-label="Type filter">
