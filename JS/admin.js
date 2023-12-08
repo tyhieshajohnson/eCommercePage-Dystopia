@@ -112,7 +112,6 @@ product = JSON.parse(localStorage.getItem('product'));
 }
 
 // Modal Functioning 
-
 function createProduct(){
     // intialize the id counter
     let id = product.length + 1
@@ -125,14 +124,17 @@ function createProduct(){
     let type =  document.querySelector('#typeInput').value;
 
     // create new Product
-    let productCreation = new Product(++id, nameInput.value, descriptionInput.value, priceInput.value, urlInput.value, typeInput.value);
+    let productCreation = new Product(++id, name, description, price, url, type);
     // push new product into array
     product.push(productCreation);
+    // setting the new product
+    localStorage.setItem(localStorage('product',JSON.stringify(product)));
     // localStorage updating
-    updateLocal();
+    updateLocal(product);
 
+    mainProduct.innerHTML = ""
     // Display the product
-    mainProduct.innerHTML +=
+    // mainProduct.innerHTML +=
     `
     <table class="table table-dark">
           <thead>

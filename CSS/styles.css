@@ -1,4 +1,6 @@
 /* HOME, SHOP, ABOUT, CONTACT, ADMIN, CART */
+/* Google Fonts Ext */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 /* footer */
 .footerNavContainer {
     display: flex;

@@ -44,6 +44,8 @@ addToCart()
 
 // Remove from cart
 // function to remove from cart
+// onload function for displaying and removing from cart
+window.onload = function onload() {
 function updateLocal(){
     localStorage.setItem('purchased',JSON.stringify(purchased));
     //sets the array from local storage array(items)in code
@@ -54,7 +56,7 @@ function remove(index) {
     // remove item from array
     purchased.splice(index,1)
     updateLocal()
-    // onload()
+    onload()
 }
 addToCart('');
 
@@ -64,4 +66,5 @@ mainProduct.addEventListener('click', function (event) {
         remove(index);
     }
 });
+};
 // End of Cart
