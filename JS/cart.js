@@ -26,7 +26,7 @@ function addToCart() {
               <th scope="row">${item.id}</th>
               <td>${item.name}</td>
               <td>${item.description}</td>
-              <td>${item.price}</td>
+              <td>R${item.price}</td>
               <td><img class="img-cart" src =${item.url}</td>
               <button class="delete btn btn-light">Delete</button>
               <button class="btn btn-light" data-add value="${index}">Add To Cart</button></td>
