@@ -1,9 +1,10 @@
-// define 
 let mainProduct = document.querySelector('main');
 let searchInput = document.querySelector('.searchInput');
 let priceFilter = document.querySelector('.priceFilter');
 let typeFilter = document.querySelector('.typeFilter');
+let sumOfBtn = document.querySelector('#sumOfBtn');
 let filteredProducts = [];
+let purchased = []; 
 
 function updateProducts() {
     let filteredProducts = product.slice();
@@ -51,7 +52,7 @@ function initialize() {
             <h5>${item.name}</h5>
             <p>${item.description}</p>
             <h4 class="priceFilter">${item.price}</h4>
-            <button class="btn btn-primary" data-add value="${index}">Add To Cart</button>
+            <button id="sumOfBtn" class="btn btn-primary" data-add value="${index}">Add To Cart</button>
         </div>
         `;
     }).join('');
@@ -71,6 +72,20 @@ function initialize() {
             }
         });
     }
+
+    if (sumOfBtn) {
+        sumOfBtn.addEventListener('click', total); 
+    }
 }
 
 initialize();
+
+// Sum function
+function total() {
+    let totalPrice = 0;
+    let totalAmount = purchased.length;
+
+    purchased.forEach(item => {
+        totalPrice += item.price;
+    });
+}
