@@ -102,5 +102,5 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       document.getElementById("loaderOverlay").style.display = "none";
       document.getElementById("displayContent").style.display = "block";
-    }, 1500);
+    }, 1000);
 });
