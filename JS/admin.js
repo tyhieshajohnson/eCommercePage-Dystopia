@@ -168,6 +168,7 @@ function renderProducts(products) {
           <td>${item.price}</td>
           <td><img class="admin-image" src="${item.url}"></td>
           <td>
+          <button class="editBtn edit" onclick="editItem(${index})" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">Edit</button>
             <button class="delete btn btn-primary" data-delete="${index}">Delete</button>
             <button class="btn btn-primary" data-add value="${index}">Add To Cart</button>
           </td>
@@ -179,6 +180,42 @@ function renderProducts(products) {
 
   mainProduct.innerHTML = productsHTML.join("");
 }
+
+function prefillModal(index) {
+  let editedProduct = product[index];
+  document.getElementById("editedName").value = editedProduct.name;
+  document.getElementById("editedDescription").value = editedProduct.description;
+  document.getElementById("editedPrice").value = editedProduct.price;
+  document.getElementById("editedUrl").value = editedProduct.url;
+  document.getElementById("editedType").value = editedProduct.type;
+}
+
+// Function to handle saving the edited product
+function saveEdit(index) {
+  // Update the product details with the edited values
+  product[index].name = document.getElementById("editedName").value;
+  product[index].description = document.getElementById("editedDescription").value;
+  product[index].price = document.getElementById("editedPrice").value;
+  product[index].url = document.getElementById("editedUrl").value;
+  product[index].type = document.getElementById("editedType").value;
+
+  // Save the updated product array to local storage
+  updateLocal();
+
+  // Render the updated products
+  renderProducts(product);
+}
+
+// Function to handle editing an item
+function editItem(index) {
+  prefillModal(index);
+
+  // Update the save button to call the saveEdit function with the index
+  document.getElementById("saveFormEdit").onclick = function () {
+    saveEdit(index);
+  };
+}
+
 
 // Load products from local storage on page load
 window.onload = function onload() {
@@ -217,7 +254,7 @@ function createProduct() {
   let price = document.querySelector("#priceInput").value;
   let url = document.querySelector("#urlInput").value;
   let type = document.querySelector("#typeInput").value;
-// constructor function created to display new product
+  // constructor function created to display new product
   let productCreation = new Product(id, name, description, price, url, type);
   product.push(productCreation);
   // saves new object
