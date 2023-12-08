@@ -63,6 +63,29 @@ footer {
 /* END OF HOME PAGE */
 
 /* ABOUT PAGE */
+.description-container {
+    margin-bottom: 15%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+#description {
+    color: white;
+}
+
+description {
+    width: 1826px;
+    height: 174px;
+    flex-shrink: 0;
+}
+
+description h4 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 /* MEDIA QUERY ABOUT PAGE */
 /* END OF ABOUT PAGE */
 
