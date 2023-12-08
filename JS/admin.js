@@ -1,4 +1,5 @@
 // Variable for Products
+let deleteButton = document.querySelector('.delete');
 let product = []
 
 mainProduct = document.querySelector('#mainProduct')
@@ -87,7 +88,6 @@ let products = product.map(function(item, index) {
 mainProduct.innerHTML = products.join("");
 }
 
-let deleteButton = document.querySelector('.delete');
 mainProduct.addEventListener('click', function(){
     // using a conditional statement by declaring the button that is clicked
     if (event.target.classList.contains('delete')){
@@ -153,8 +153,8 @@ function createProduct(){
             <td>${productCreation.price}</td>
             <td><img src="${productCreation.url}" alt="Product Image"></td>
             <td>
-                <button class="delete btn btn-primary" data-delete="${id}">Delete</button>
-                <button class="btn btn-primary" data-add value="${id}">Add To Cart</button>
+              <button class="delete btn btn-light" data-delete="${id}">Delete</button>
+              <button class="btn btn-light" data-add value="${id}">Add To Cart</button>
             </tr>
           </tbody>
         </table>
