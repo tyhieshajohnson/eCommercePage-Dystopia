@@ -166,7 +166,7 @@ function renderProducts(products) {
           <td>${item.name}</td>
           <td>${item.description}</td>
           <td>${item.price}</td>
-          <td><img src="${item.url}"></td>
+          <td><img class="admin-image" src="${item.url}"></td>
           <td>
             <button class="delete btn btn-primary" data-delete="${index}">Delete</button>
             <button class="btn btn-primary" data-add value="${index}">Add To Cart</button>

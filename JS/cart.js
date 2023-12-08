@@ -19,7 +19,6 @@ function addToCart() {
               <th scope="col">Description</th>
               <th scope="col">Price</th>
               <th scope="col">URL</th>
-              <th scope="col">Quantity</th>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +30,6 @@ function addToCart() {
               <td><img class="img-cart" src =${item.url}</td>
               <button class="delete btn btn-light">Delete</button>
               <button class="btn btn-light" data-add value="${index}">Add To Cart</button></td>
-              <td><input type="text" id="quantity" oninput="document.getElementById('#quantity').value">${item.price}</td>
             </tr>
           </tbody>
         </table>
