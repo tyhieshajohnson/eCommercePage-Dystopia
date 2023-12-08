@@ -1,3 +1,4 @@
+// variables stating 
 let mainProduct = document.querySelector('#mainProduct');
 let searchInput = document.querySelector('.searchInput');
 let priceFilter = document.querySelector('.priceFilter');
@@ -31,7 +32,8 @@ function updateProducts() {
             <h5>${item.name}</h5>
             <p>${item.type}</p>
             <p>${item.description}</p>
-            <h4 class="priceFilter">${item.price}</h4>
+            <p>${item.quantity}</p>
+            <h4 class="priceFilter">R${item.price}</h4>
             <button class="btn btn-danger" data-add value="${index}">Add To Cart</button>
         </div>
         `;
@@ -45,7 +47,7 @@ function add(index) {
 }
 
 // function for revealing ALL products by overwriting existing if one does not exist
-function initialize() {
+function restore() {
     product = JSON.parse(localStorage.getItem('product')) || [];
     mainProduct.innerHTML = product.map(function(item, index) {
         return `
@@ -83,14 +85,11 @@ function initialize() {
     }
 }
 
-initialize();
+restore();
 
-// Sum function
-function total() {
-    let totalPrice = 0;
-    let totalAmount = purchased.length;
-
-    purchased.forEach(item => {
-        totalPrice += item.price;
-    });
+// Quantity function for incrementing products
+function total(index) {
+    product[index].quantity = ++product[index].quantity;
+    purchased.push(product[index]);
+    addToCart();
 }
