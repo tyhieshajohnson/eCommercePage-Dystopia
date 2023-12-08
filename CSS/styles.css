@@ -37,7 +37,7 @@ footer {
     display: flex;
     justify-content: center;
     background-color: black;
-    color: red;
+    color: white;
 }
 
 #landingAbout {
@@ -75,6 +75,44 @@ footer {
     line-height: normal;
 }
 /* MEDIA QUERY HOME PAGE */
+@media only screen and (max-width: 380px) {
+    navbar-brand {
+        font-size: 12px;
+    }
+    .carousel-item img {
+        width: auto;
+    }
+    .landingHead {
+        font-size: 50px;
+        padding-right: 50%;
+    }
+    .animationHeading:hover {
+        animation: ease-out 4s linear infinite;
+        color: red;
+    }
+
+    .landingAbout {
+        width: 100%;
+    }
+
+    #landingDescription {
+        width: 100%;
+        height: 30%;
+        color: white;
+        padding-top: 1000%;
+        /* padding: 10%;
+        padding-left: 10%;
+        padding-right: 30%; */
+    }
+    .landingImage {
+        padding: 10%;
+        padding-right: 5%;
+        padding-left: 0%;
+        padding-top: 20%;
+        padding-right: 60%;
+        /* margin-bottom: 100%; */
+    }
+}
 /* END OF HOME PAGE */
 
 /* ABOUT PAGE */
