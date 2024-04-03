@@ -1,4 +1,10 @@
 /* HOME, SHOP, ABOUT, CONTACT, ADMIN, CART */
+/* Navigation Bar */
+.nav-link {
+    display: flex;
+    justify-content: center;
+}
+
 /* Google Fonts Ext */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 /* footer */
@@ -33,7 +39,7 @@ footer {
 /* HOME PAGE */
 /* Landing About */
 /* Landing Animation */
-.animationHeading {
+/* .animationHeading {
     display: flex;
     justify-content: center;
     background-color: black;
@@ -47,19 +53,18 @@ footer {
 }
  
 #landingDescription {
-    width: 50$;
+    width: 50px;
     color: white;
     padding: 10%;
     padding-left: 10%;
     padding-right: 30%;
-}
+} */
 
 /* Landing Page Image */
-.landingImage {
+/* .landingImage {
     padding: 10%;
     padding-right: 5%;
     padding-left: 0%;
-    /* margin-bottom: 100%; */
 }
 
 .landingHead {
@@ -73,7 +78,7 @@ footer {
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-}
+} */
 /* MEDIA QUERY HOME PAGE */
 @media only screen and (max-width: 380px) {
     navbar-brand {

@@ -23,7 +23,7 @@ if (localStorage.getItem("product")) {
     "ANTI SOCIAL HENTAI CLUB TEE",
     "100% organic cotton blend.",
     350,
-    "https://i.postimg.cc/Zq1NjHnX/rgergegeg-768x768.png",
+    "https://i.ibb.co/DLY7n9f/tee1.webp",
     "Tshirt"
   );
   // Product2
